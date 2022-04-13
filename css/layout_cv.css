@@ -79,8 +79,8 @@ h2{
 .left-column{
   grid-area: left-column;
   padding: 50px;
-  background-color: #4472C4;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .portait{
