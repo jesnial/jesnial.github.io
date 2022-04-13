@@ -1,7 +1,7 @@
 /* GENERAL */
 *{
   margin: 0;
-  box-sizing: border-box;
+ /* box-sizing: border-box;*/
 }
 
 body{
@@ -62,14 +62,14 @@ h2{
   margin-right: .5rem;
 }
 
-.cv-container{
+/*.cv-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "left-column right-column right-column";
   width: 1200px;
   margin: 100px auto;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+}*/
 
 .section{
   margin-bottom: 1.5rem;
