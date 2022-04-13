@@ -4,7 +4,7 @@
  /* box-sizing: border-box;*/
   /*margin: 60px auto;
    /* width: 70%;*/
-  background-color: #c2d8ff;
+ 
 }
 
 body{
@@ -12,7 +12,6 @@ body{
   font-weight: 300;
   font-size: .9rem;
   line-height: 1.5;
-   background-color: #c2d8ff;
 }
 nav ul, footer ul {
     font-family:Roboto;
@@ -32,7 +31,6 @@ a{
 
 a:hover{
   text-decoration: underline;
-   background-color: #c2d8ff;
 }
 
 p{
@@ -43,14 +41,12 @@ h1{
   margin: 0 0 1rem;
   font-size: 2.5rem;
   margin-bottom: .5rem;
-   background-color: #c2d8ff;
 }
 
 h2{
   margin: 0 0 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-   background-color: #c2d8ff;
 }
 
 .text-blue{
@@ -75,20 +71,18 @@ h2{
   grid-template-areas: "left-column right-column right-column right-column";
   width: 1300px;
   margin: 100px auto;
-   background-color: #c2d8ff;
   /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
 }
 
 .section{
   margin-bottom: 1.5rem;
-   background-color: #c2d8ff;
 }
 
 /* LEFT COLUMN */
 .left-column{
   grid-area: left-column;
   padding: 50px;
-   background-color: #c2d8ff;
+   background-color: white;
   color: black;
 }
 
@@ -98,7 +92,7 @@ h2{
   margin: auto;
   display: block;
   margin-bottom: 50px;
-   background-color: #c2d8ff;
+
 }
 
 .skills{
@@ -107,7 +101,7 @@ h2{
   font-size: 1.1rem;
   letter-spacing: 1px;
   margin: 0 0 1rem;
-   background-color: #c2d8ff;
+
 }
 
 /* RIGHT COLUMN */
@@ -115,7 +109,7 @@ h2{
   grid-area: right-column;
   display: grid;
   grid-template-rows: 250px 1fr;
-   background-color: #c2d8ff;
+
   grid-template-areas: 
     "header"
     "content";
@@ -141,7 +135,7 @@ h2{
 .content{
   grid-area: content;
   padding: 50px;
-   background-color: #c2d8ff;
+
 }
 
 .experience-list{
