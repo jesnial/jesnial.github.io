@@ -14,6 +14,8 @@ li {
  list-style: none;
 }
 
+.homepage #top { display: none; }
+
 /* NAVBAR STYLING STARTS */
 .navbar {
  display: flex;
@@ -127,8 +129,6 @@ input[type=checkbox]:checked ~ .menu{
    /* width: 70%;*/
  
 }
-
-.homepage #top { display: none; }
 
 body{
   font-family: Roboto;
