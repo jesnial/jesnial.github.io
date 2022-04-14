@@ -14,8 +14,6 @@ li {
  list-style: none;
 }
 
-.homepage #top { display: none; }
-
 /* NAVBAR STYLING STARTS */
 .navbar {
  display: flex;
