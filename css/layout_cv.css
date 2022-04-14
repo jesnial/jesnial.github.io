@@ -20,7 +20,8 @@ li {
  align-items: center;
  justify-content: space-between;
  padding: 20px;
- background-color: teal;
+ background-color: #4472C4;
+ color: white;
  color: #fff;
 }
 .nav-links a {
