@@ -88,7 +88,8 @@ input[type=checkbox]{
 .menu { 
  display:none;
  position: absolute;
- background-color:teal;
+ background-color:#4472C4;
+ color: white;
  right: 0;
  left: 0;
  text-align: center;
@@ -127,6 +128,8 @@ input[type=checkbox]:checked ~ .menu{
    /* width: 70%;*/
  
 }
+
+.homepage #top { display: none; }
 
 body{
   font-family: Roboto;
