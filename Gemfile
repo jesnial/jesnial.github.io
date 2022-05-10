@@ -1,11 +1,9 @@
 source 'http://rubygems.org'
-
-gem 'rails', '3.0.7'
+git_source(:github) {|site| "https://github.com/jesnial/jesnial.github.io" }
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'jekyll-seo-tag'
 
 # Use unicorn as the web server
