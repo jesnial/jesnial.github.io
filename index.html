@@ -66,18 +66,31 @@
   }
 
   nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background: var(--accent-dark);
     font-family: var(--sans);
-    font-size: 0.92rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.1rem;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    padding: 0.7rem 0;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   }
-  nav.site-nav a { color: var(--text); text-decoration: none; }
-  nav.site-nav a:hover, nav.site-nav a:focus { color: var(--accent-dark); text-decoration: underline; }
+  nav.site-nav a {
+    flex: 1 1 0;
+    text-align: center;
+    color: #eaf3f2;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  nav.site-nav a:last-child { border-right: none; }
+  nav.site-nav a:hover, nav.site-nav a:focus {
+    background: var(--accent);
+    color: #fff;
+  }
 
   section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
 
@@ -87,8 +100,8 @@
     font-weight: 650;
     color: var(--accent-dark);
     margin: 0 0 1rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+    border-bottom: 2.5px solid var(--accent);
   }
 
   section h3 {
@@ -103,7 +116,7 @@
 
   .intro-figure {
     float: right;
-    width: 132px;
+    width: clamp(90px, 22vw, 160px);
     margin: 0 0 1rem 1.5rem;
   }
   .intro-figure img {
@@ -111,8 +124,8 @@
     border-radius: 4px;
     display: block;
   }
-  @media (max-width: 520px) {
-    .intro-figure { float: none; width: 110px; margin: 0 0 1rem; }
+  @media (max-width: 480px) {
+    .intro-figure { float: none; display: block; width: clamp(90px, 40vw, 160px); margin: 0 auto 1.2rem; }
   }
 
   ul.plain, ul.pub-list { list-style: none; margin: 0 0 1rem; padding: 0; }
@@ -123,6 +136,27 @@
   }
   ul.pub-list li { max-width: 68ch; }
 
+  .sup-item {
+    border-left: 2px solid var(--rule);
+    padding: 0.5rem 0 0.7rem 1rem;
+    margin-bottom: 1rem;
+    max-width: 68ch;
+  }
+  .sup-item .sup-head {
+    font-family: var(--sans);
+    font-weight: 650;
+    font-size: 0.95rem;
+    margin: 0 0 0.15rem;
+  }
+  .sup-item .sup-cosup { font-weight: 400; color: var(--text-muted); }
+  .sup-item .sup-title { margin: 0 0 0.3rem; }
+  .sup-item .sup-meta {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
   .actions {
     font-family: var(--sans);
     display: flex;
@@ -132,8 +166,27 @@
     font-size: 0.95rem;
     clear: both;
   }
-  .actions a { text-decoration: none; border-bottom: 1px solid var(--rule); }
-  .actions a:hover, .actions a:focus { border-bottom-color: var(--accent); }
+  .actions a {
+    text-decoration: none;
+    color: var(--accent-dark);
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.4rem 1.1rem;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .actions a:hover, .actions a:focus { background: var(--accent); color: #fff; }
+
+  header.site-head { position: relative; padding-top: 0.5rem; }
+  header.site-head::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 46px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
 
   details {
     border-left: 2px solid var(--rule);
@@ -152,12 +205,39 @@
   details ul { margin-top: 0.3rem; }
   details ul.plain li { border-left: none; padding-left: 0; }
 
-  .game-shot {
-    width: 160px;
-    border-radius: 4px;
-    display: block;
-    margin-bottom: 0.8rem;
+  .game-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    text-align: center;
   }
+  .game-shot {
+    width: 220px;
+    max-width: 80%;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto 1.2rem;
+    box-shadow: 0 6px 18px rgba(10, 69, 78, 0.18);
+  }
+  .game-card p {
+    margin: 0 auto;
+    max-width: 46ch;
+  }
+  .game-card .play-link {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-family: var(--sans);
+    font-size: 0.92rem;
+    font-weight: 650;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent);
+    padding: 0.55rem 1.4rem;
+    border-radius: 999px;
+  }
+  .game-card .play-link:hover, .game-card .play-link:focus { background: var(--accent-dark); }
 
   footer#footer {
     font-family: var(--sans);
@@ -180,18 +260,22 @@
 </style>
 </head>
 <body>
+
+<nav class="site-nav">
+  <a href="#intro">Home</a>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#communications">Communications</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#supervision">Supervision</a>
+  <a href="#game">Game</a>
+</nav>
+
 <div class="wrap">
 
   <header class="site-head">
     <h1>Jessie Levillain</h1>
-    <nav class="site-nav">
-      <a href="#intro">Home</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#communications">Communications</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#game">Game</a>
-    </nav>
+    <p class="role">Postdoctoral fellow, CNES &middot; Applied Mathematics</p>
   </header>
 
   <section id="intro">
@@ -200,7 +284,7 @@
       I am currently a postdoctoral fellow in mathematical modeling and data hybridation for Earth Observation at CNES (Centre National des Etudes Spatiales), since December 2024. My aim is to develop mathematical methods to optimally combine satellite data from various sources while still being able to precisely quantify the associated uncertainty on relevant variables.
     </p>
     <p>
-      I obtained my PhD in September 2024, at <a href="https://portail.polytechnique.edu/cmap/en/">CMAP</a> (applied mathematics lab, École polytechnique), supervised by <a href="http://www.cmap.polytechnique.fr/~alouges/">François Alouges</a> and <a href="https://lefebvre-lepot.perso.math.cnrs.fr/">Aline Lefebvre-Lepot</a>. The manuscript is available <a href="https://theses.hal.science/tel-04766775">here</a>. In 2019&ndash;2020, I was invited at Politecnico di Torino by <a href="https://www.polito.it/en/staff?p=fabio.freschi">Fabio Freschi</a>, professor in the DENERG department. I am a former student at École Normale Supérieure Paris-Saclay, France.
+      I obtained my PhD in September 2024, at <a href="https://portail.polytechnique.edu/cmap/en/">CMAP</a> (applied mathematics lab, École polytechnique), supervised by <a href="http://www.cmap.polytechnique.fr/~alouges/">François Alouges</a> and <a href="https://lefebvre-lepot.perso.math.cnrs.fr/">Aline Lefebvre-Lepot</a>. The manuscript is available <a href="https://theses.hal.science/tel-04766775">here</a>. In 2019-2020, I was invited at Politecnico di Torino by <a href="https://www.polito.it/en/staff?p=fabio.freschi">Fabio Freschi</a>, professor in the DENERG department. I am a former student at École Normale Supérieure Paris-Saclay, France.
     </p>
     <div class="actions">
       <a href="jobs.html">Job offers</a>
@@ -215,10 +299,10 @@
       I now focus on three ongoing projects with applications to satellite data processing: mathematical modeling and inverse problems for river bathymetry estimates using variational data assimilation, and euclidean random assignment problems to track the dynamics of identical agents observed at various time stamps. I'm also interested in uncertainty propagation for quantities of interest (bathymetry, water volume&hellip;), and in machine learning techniques currently used in the Earth observation community.
     </p>
     <p>
-      During my PhD, I studied partial differential equations and numerical methods applied to swimming at the microscopic scale &mdash; understanding and modeling micro-swimmers (bacteria, algae, spermatozoa) and the mechanisms enabling them to swim, with an eye toward micro-robots for medical applications.
+      During my PhD, I studied partial differential equations and numerical methods applied to swimming at the microscopic scale: understanding and modeling micro-swimmers (bacteria, algae, spermatozoa) and the mechanisms enabling them to swim, with an eye towards micro-robots for medical applications.
     </p>
     <p>
-      On the numerical side, I optimize computationally expensive simulations for larger-scale physics problems too, such as wireless power transfer for electric vehicles &mdash; methods that are also broadly applicable to fluid-structure simulations for micro-swimmers.
+      On the numerical side, I optimize computationally expensive simulations for larger-scale physics problems too, such as wireless power transfer for electric vehicles ; methods that are also broadly applicable to fluid-structure simulations for micro-swimmers.
     </p>
   </section>
 
@@ -336,7 +420,6 @@
       <li>MAP350: Preparatory mathematics course, 1st year of Ingénieur Polytechnicien Program.</li>
       <li>Numerical Analysis 2: Linear Algebra and Optimization (MAA251, Bachelor of Science, 2nd year).</li>
       <li>Computational mathematics (MAA106, Bachelor of Science, 1st year).</li>
-      <li>Supervision of Bachelor Theses (internships, 3rd year): "Introduction to image denoising: on BM3D"; "On the Perron&ndash;Frobenius theorem: discovering Google's PageRank algorithm".</li>
     </ul>
 
     <h3>Previous teaching experience</h3>
@@ -346,12 +429,53 @@
     </ul>
   </section>
 
+  <section id="supervision">
+    <h2>Supervision</h2>
+
+    <h3>M2 research internships</h3>
+
+    <div class="sup-item">
+      <p class="sup-head">A. Schlater, 2026 <span class="sup-cosup">&mdash; co-supervision with M. D&rsquo;Achille and P. Moyal</span></p>
+      <p class="sup-title"><em>Random assignment problems for satellite image registration</em></p>
+      <p class="sup-meta">IECL, Université de Lorraine, Metz, France (Jena University). From April 2026, 6 months.</p>
+    </div>
+
+    <div class="sup-item">
+      <p class="sup-head">T. Quarck, 2025 <span class="sup-cosup">&mdash; co-supervision with M. D&rsquo;Achille</span></p>
+      <p class="sup-title"><em>Random assignment problems for satellite data acquisition</em></p>
+      <p class="sup-meta">LMO, Université Paris-Saclay, Orsay, France. 6 months.</p>
+    </div>
+
+    <div class="sup-item">
+      <p class="sup-head">L. Marsal, 2025 <span class="sup-cosup">&mdash; co-supervision with N. Gasnier</span></p>
+      <p class="sup-title"><em>Uncertainty quantification and data hybridation for water storage evaluation</em></p>
+      <p class="sup-meta">CNES, Toulouse, France. 6 months.</p>
+    </div>
+
+    <h3>L3 bachelor theses</h3>
+
+    <div class="sup-item">
+      <p class="sup-head">A. Failler, 2023</p>
+      <p class="sup-title"><em>On the Perron&ndash;Frobenius theorem: discovering Google's PageRank algorithm</em></p>
+      <p class="sup-meta">CMAP, École polytechnique, Palaiseau, France. 2 months.</p>
+    </div>
+
+    <div class="sup-item">
+      <p class="sup-head">D. Dac, 2022</p>
+      <p class="sup-title"><em>Introduction to image denoising: on BM3D</em></p>
+      <p class="sup-meta">CMAP, École polytechnique, Palaiseau, France. 2 months.</p>
+    </div>
+  </section>
+
   <section id="game">
     <h2>Game</h2>
-    <img class="game-shot" src="images/Capture d’écran 2026-04-12 à 12.20.27.png" alt="Pulse Panic game screenshot" />
-    <p>
-      Try out <a href="https://suchiz.itch.io/pulse-panic">Pulse Panic</a>, a game coded during the Toulouse scientific game jam (2026 edition): create and guide your nanobot to attack Mrs. Thrombosis and save your patient from a stroke!
-    </p>
+    <div class="game-card">
+      <img class="game-shot" src="images/Capture d’écran 2026-04-12 à 12.20.27.png" alt="Pulse Panic game screenshot" />
+      <p>
+        Try out <strong>Pulse Panic</strong>, a game coded during the Toulouse scientific game jam (2026 edition): create and guide your nanobot to attack Mrs. Thrombosis and save your patient from a stroke!
+      </p>
+      <a class="play-link" href="https://suchiz.itch.io/pulse-panic">Play Pulse Panic &rarr;</a>
+    </div>
   </section>
 
   <footer id="footer">
