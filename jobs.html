@@ -1,52 +1,96 @@
-<!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Generic - Stellar by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Job offers &middot; Jessie Levillain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Open PhD and job offers with Jessie Levillain." />
+<style>
+  :root {
+    --bg: #f8f9f8;
+    --text: #1f2724;
+    --text-muted: #5b6b66;
+    --accent: #0e5c68;
+    --accent-dark: #0a454e;
+    --rule: #dde3e1;
+    --serif: ui-serif, Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  * { box-sizing: border-box; }
 
-        <!-- First Section -->
-          <section id="first" class="main special">
-            <header class="major">
-              <h1>PhD thesis proposal</h1>
-            </header>
-            <ul class="features">
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-              <div class="content">
-                       <div class="experience-list">
-                          <p>
-                           <a href="https://doctorat.univ-lorraine.fr/fr/les-ecoles-doctorales/iaem/offres-de-these/probleme-dassignation-euclidienne-aleatoire-en-petite"> Random assignment problems in small dimensions and applications </a>.
-                         </p>
-           
+  a {
+    color: var(--accent-dark);
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+  }
+  a:hover, a:focus { text-decoration-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-                     </div>
-                   </div>
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
 
-              <li>
+  .back-link {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover, .back-link:focus { color: var(--accent-dark); }
 
-            <footer class="major">
-            </footer>
-          </section>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  h1 {
+    font-family: var(--sans);
+    font-size: 1.6rem;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
 
-	</body>
+  ul.offers { list-style: none; margin: 0; padding: 0; }
+  ul.offers li {
+    padding: 0.9rem 0 0.9rem 1rem;
+    border-left: 2px solid var(--rule);
+    margin-bottom: 0.6rem;
+    max-width: 62ch;
+  }
+
+  .empty-note {
+    font-family: var(--sans);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="back-link" href="index.html">&larr; Back to home</a>
+
+  <h1>Job offers</h1>
+
+  <ul class="offers">
+    <li>
+      <a href="https://doctorat.univ-lorraine.fr/fr/les-ecoles-doctorales/iaem/offres-de-these/probleme-dassignation-euclidienne-aleatoire-en-petite">PhD thesis proposal: Random assignment problems in small dimensions and applications</a>
+    </li>
+  </ul>
+
+</div>
+</body>
 </html>
