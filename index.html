@@ -1,510 +1,288 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 <head>
-<meta charset="utf-8" />
 <title>Jessie Levillain</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="author" content="Jessie Levillain" />
-<meta name="description" content="Jessie Levillain — Postdoctoral fellow in mathematical modeling and data hybridation for Earth Observation at CNES. Applied mathematics, micro-swimmers, PDEs, satellite data assimilation." />
-<meta property="og:title" content="Jessie Levillain" />
-<meta property="og:description" content="Postdoctoral fellow in mathematical modeling and data hybridation for Earth Observation at CNES." />
-<meta property="og:type" content="website" />
-<style>
-  :root {
-    --bg: #f8f9f8;
-    --bg-alt: #eef1f0;
-    --text: #1f2724;
-    --text-muted: #5b6b66;
-    --accent: #0e5c68;
-    --accent-dark: #0a454e;
-    --rule: #dde3e1;
-    --serif: ui-serif, Georgia, "Times New Roman", serif;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  }
-
-  * { box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--serif);
-    font-size: 17px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a {
-    color: var(--accent-dark);
-    text-decoration-color: var(--rule);
-    text-underline-offset: 3px;
-  }
-  a:hover, a:focus { text-decoration-color: var(--accent); }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-  .wrap {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 3.5rem 1.5rem 5rem;
-  }
-
-  header.site-head h1 {
-    font-family: var(--sans);
-    font-size: 1.9rem;
-    font-weight: 650;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.25rem;
-  }
-
-  header.site-head p.role {
-    font-family: var(--sans);
-    color: var(--text-muted);
-    margin: 0 0 1.5rem;
-    font-size: 0.98rem;
-  }
-
-  nav.site-nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    background: var(--accent-dark);
-    font-family: var(--sans);
-    display: flex;
-    margin-bottom: 3rem;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.08);
-  }
-  nav.site-nav a {
-    flex: 1 1 0;
-    text-align: center;
-    color: #eaf3f2;
-    text-decoration: none;
-    font-size: 0.95rem;
-    padding: 1rem 0.5rem;
-    border-right: 1px solid rgba(255,255,255,0.12);
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  nav.site-nav a:last-child { border-right: none; }
-  nav.site-nav a:hover, nav.site-nav a:focus {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
-
-  section h2 {
-    font-family: var(--sans);
-    font-size: 1.05rem;
-    font-weight: 650;
-    color: var(--accent-dark);
-    margin: 0 0 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2.5px solid var(--accent);
-  }
-
-  section h3 {
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    font-weight: 650;
-    margin: 1.4rem 0 0.5rem;
-    color: var(--text);
-  }
-
-  p { margin: 0 0 1rem; max-width: 62ch; }
-
-  .intro-figure {
-    float: right;
-    width: clamp(90px, 22vw, 160px);
-    margin: 0 0 1rem 1.5rem;
-  }
-  .intro-figure img {
-    width: 100%;
-    border-radius: 4px;
-    display: block;
-  }
-  @media (max-width: 480px) {
-    .intro-figure { float: none; display: block; width: clamp(90px, 40vw, 160px); margin: 0 auto 1.2rem; }
-  }
-
-  ul.plain, ul.pub-list { list-style: none; margin: 0 0 1rem; padding: 0; }
-  ul.plain li, ul.pub-list li {
-    padding: 0.35rem 0 0.35rem 1rem;
-    border-left: 2px solid var(--rule);
-    margin-bottom: 0.35rem;
-  }
-  ul.pub-list li { max-width: 68ch; }
-
-  .sup-item {
-    border-left: 2px solid var(--rule);
-    padding: 0.5rem 0 0.7rem 1rem;
-    margin-bottom: 1rem;
-    max-width: 68ch;
-  }
-  .sup-item .sup-head {
-    font-family: var(--sans);
-    font-weight: 650;
-    font-size: 0.95rem;
-    margin: 0 0 0.15rem;
-  }
-  .sup-item .sup-cosup { font-weight: 400; color: var(--text-muted); }
-  .sup-item .sup-title { margin: 0 0 0.3rem; }
-  .sup-item .sup-meta {
-    font-family: var(--sans);
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin: 0;
-  }
-
-  .actions {
-    font-family: var(--sans);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.2rem;
-    margin: 1.2rem 0 0;
-    font-size: 0.95rem;
-    clear: both;
-  }
-  .actions a {
-    text-decoration: none;
-    color: var(--accent-dark);
-    border: 1.5px solid var(--accent);
-    border-radius: 999px;
-    padding: 0.4rem 1.1rem;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .actions a:hover, .actions a:focus { background: var(--accent); color: #fff; }
-
-  header.site-head { position: relative; padding-top: 0.5rem; }
-  header.site-head::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 46px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 2px;
-  }
-
-  details {
-    border-left: 2px solid var(--rule);
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  details summary {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 0.92rem;
-    cursor: pointer;
-    padding: 0.4rem 0;
-    color: var(--text-muted);
-  }
-  details summary:hover { color: var(--accent-dark); }
-  details ul { margin-top: 0.3rem; }
-  details ul.plain li { border-left: none; padding-left: 0; }
-
-  .game-card {
-    background: var(--bg-alt);
-    border: 1px solid var(--rule);
-    border-top: 4px solid var(--accent);
-    border-radius: 10px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-  }
-  .game-shot {
-    width: 220px;
-    max-width: 80%;
-    border-radius: 6px;
-    display: block;
-    margin: 0 auto 1.2rem;
-    box-shadow: 0 6px 18px rgba(10, 69, 78, 0.18);
-  }
-  .game-card p {
-    margin: 0 auto;
-    max-width: 46ch;
-  }
-  .game-card .play-link {
-    display: inline-block;
-    margin-top: 1.2rem;
-    font-family: var(--sans);
-    font-size: 0.92rem;
-    font-weight: 650;
-    text-decoration: none;
-    color: #fff;
-    background: var(--accent);
-    padding: 0.55rem 1.4rem;
-    border-radius: 999px;
-  }
-  .game-card .play-link:hover, .game-card .play-link:focus { background: var(--accent-dark); }
-
-  footer#footer {
-    font-family: var(--sans);
-    font-size: 0.92rem;
-    border-top: 1px solid var(--rule);
-    padding-top: 1.5rem;
-    color: var(--text-muted);
-  }
-  footer#footer h2 {
-    font-size: 1rem;
-    color: var(--text);
-    border: none;
-    padding: 0;
-    margin-bottom: 0.6rem;
-  }
-  footer#footer .addr { margin-bottom: 0.8rem; }
-  footer#footer .socials a { margin-right: 1rem; }
-  footer#footer .meta { margin-top: 1.5rem; font-size: 0.82rem; color: #8a9490; display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
-  footer#footer .hits-badge { vertical-align: middle; height: 18px; }
-</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/custom.css" />
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body>
+<body class="is-preload">
 
-<nav class="site-nav">
-  <a href="#intro">Home</a>
-  <a href="#research">Research</a>
-  <a href="#publications">Publications</a>
-  <a href="#communications">Communications</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#supervision">Supervision</a>
-  <a href="#game">Game</a>
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header" class="alt">
+<span class="logo"><img src="images/logo.svg" alt="" /></span>
+<h1>Jessie Levillain</h1>
+<!--<p>Post-doctoral fellow in Applied Mathematics.</p>-->
+</header>
+
+<!-- Nav -->
+<nav id="nav">
+<ul>
+<li><a href="#intro" class="active">Home</a></li>
+<!--<li><a href="#first">CV</a></li>-->
+<!--<li><a href="#second">Research</a></li>-->
+<li><a href="#second2">Publications</a></li>
+<li><a href="#second3">Communications</a></li>
+<li><a href="organization.html">Organization</a></li>
+<li><a href="supervision.html">Supervision</a></li>
+<li><a href="teaching.html">Teaching</a></li>
+<li><a href="#third">Game</a></li>
+</ul>
 </nav>
 
-<div class="wrap">
+<!-- Main -->
+<div id="main">
 
-  <header class="site-head">
-    <h1>Jessie Levillain</h1>
-    <p class="role">Postdoctoral fellow, CNES &middot; Applied Mathematics</p>
-  </header>
+<!-- Introduction -->
+<!-- <div style="background:#ffe6e6; border-left:5px solid #d32f2f; padding:12px; font-family:Arial, sans-serif; color:#8b0000; margin:20px 0;">
+⚠️ <strong>CONFERENCE ANNOUNCEMENT: </strong> "Modeling and mathematical analysis of micro-swimmers in biology -- MicroSwim26", 07/06-10/2026, CHL, Brest. <a href="https://www.lebesgue.fr/en/microSwim26"> Website </a>
+</div> -->
+<section id="intro" class="main">
+<div class="spotlight">
+<!-- Place this inside your <body>, right after <body class="is-preload"> -->
+<div class="content">
+<!--<header class="major">
+<h2>Ipsum sed adipiscing</h2>
+</header>-->
+<p> <br>
+I am currently a postdoctoral fellow in mathematical modeling and data hybridation for Earth Observation at CNES (Centre National des Etudes Spatiales), since December 2024. My aim is to develop mathematical methods to optimally combine satellite data from various sources while still being able to precisely quantify the associated incertitude on relevant variables.
+<br>
+</p>
+<p>
+A short bio:
+<br>
+I have obtained my PhD in September 2024. It took place at <a href="https://portail.polytechnique.edu/cmap/en/"> CMAP </a> (applied mathematics lab in École polytechnique), under the supervision of <a href="http://www.cmap.polytechnique.fr/~alouges/"> François Alouges </a> and <a href="https://lefebvre-lepot.perso.math.cnrs.fr/"> Aline Lefebvre-Lepot</a>. The manuscript is available <a href="https://theses.hal.science/tel-04766775"> here</a>.
+<br>
+In 2019-2020, I was invited at Politecnico di Torino by <a href="https://www.polito.it/en/staff?p=fabio.freschi"> Fabio Freschi </a>, who is a full professor in the DENERG department.
+<br>
+I am a former student at Ecole Normale Supérieure Paris-Saclay, France.
+</p>
+<br>
+</p>
+<footer class="major">
+<ul class="actions special">
+<li><a href="jobs.html" class="button primary">Job offers</a></li>
+<li><a href="CV_Engl.pdf" class="button">PDF resume</a></li>
+<li><a href="#footer" class="button primary">Contact me</a></li>
+</ul>
+</footer>
+</div>
+<span class="image"><img src="images/IMG_0507.png" alt="" /></span>
+</div>
+</section>
 
-  <section id="intro">
-    <span class="intro-figure"><img src="images/IMG_0507.png" alt="Portrait of Jessie Levillain" /></span>
-    <p>
-      From October 2026, I will be a Research Scientist (CRCN) at <a href="https://www.inrae.fr/">INRAE</a> - <a href="https://www.universite-paris-saclay.fr/">Université Paris-Saclay</a>  in Jouy-en-Josas (France).
-      I am currently a postdoctoral fellow in mathematical modeling and data hybridation for Earth Observation at <a href="https://cnes.fr/">CNES</a>  (Centre National des Etudes Spatiales), since December 2024. My aim is to develop mathematical methods to optimally combine satellite data from various sources while still being able to precisely quantify the associated uncertainty on relevant variables.
-    </p>
-    <p>
-      I obtained my PhD in September 2024, at <a href="https://portail.polytechnique.edu/cmap/en/">CMAP</a> (applied mathematics lab, École polytechnique), supervised by <a href="http://www.cmap.polytechnique.fr/~alouges/">François Alouges</a> and <a href="https://lefebvre-lepot.perso.math.cnrs.fr/">Aline Lefebvre-Lepot</a>. The manuscript is available <a href="https://theses.hal.science/tel-04766775">here</a>. In 2019-2020, I was invited at Politecnico di Torino by <a href="https://www.polito.it/en/staff?p=fabio.freschi">Fabio Freschi</a>, professor in the DENERG department. I am a former student at École Normale Supérieure Paris-Saclay, France.
-    </p>
-    <div class="actions">
-      <a href="jobs.html">Job offers</a>
-      <a href="CV_Engl.pdf">PDF resume</a>
-      <a href="#footer">Contact me</a>
-    </div>
-  </section>
+<!-- Second Section -->
+<section id="second2" class="main special">
+<header class="major">
+<h2>Research</h2>
+I now focus on three ongoing projects with applications to satellite data processing, using mathematical modeling, inverse problems and variational data assimilation for river bathymetry estimates, or euclidean random assignment problems to track the dynamics of identical agents in a system observed at various time stamps.
+I also have an interest in uncertainty propagation when predicting a quantity of interest (e.g. bathymetry estimate, water volume...), along with exploring and understanding machine learning techniques that are currently in-use in the Earth observation community.
+<br>
+<br>
+During my PhD, I studied partial differential equations and numerical methods, and I also focused on optimizing numerical simulations, applied to swimming at the microscopic scale.
+The aim was to understand and model both micro-swimmers, and the even more microscopic mechanisms enabling them to swim. I have an interest in various types of micro-swimmers, ranging from living ones such as bacteria, algae or spermatozoa, to mathematical toy-models.
+More broadly, I like learning more about optimizing and controlling these systems, in particular linked to creating micro-robots with medical applications.
+<br>
+When it comes to the numerical aspect, I perform and optimize computationally expensive simulations on larger-scale problems applied to physics as well, such as wireless power transfer for electric vehicles. Moreover, the methods used in this last aspect of my work are also widely applicable to fluid-structure simulations for micro-swimmers.
+</section>
 
-  <section id="research">
-    <h2>Research</h2>
-    <p>
-      I now focus on three ongoing projects with applications to satellite data processing: mathematical modeling and inverse problems for river bathymetry estimates using variational data assimilation, and euclidean random assignment problems to track the dynamics of identical agents observed at various time stamps. I'm also interested in uncertainty propagation for quantities of interest (bathymetry, water volume&hellip;), and in machine learning techniques currently used in the Earth observation community.
-    </p>
-    <p>
-      During my PhD, I studied partial differential equations and numerical methods applied to swimming at the microscopic scale: understanding and modeling micro-swimmers (bacteria, algae, spermatozoa) and the mechanisms enabling them to swim, with an eye towards micro-robots for medical applications.
-    </p>
-    <p>
-      On the numerical side, I optimize computationally expensive simulations for larger-scale physics problems too, such as wireless power transfer for electric vehicles ; methods that are also broadly applicable to fluid-structure simulations for micro-swimmers.
-    </p>
-  </section>
+<!-- Second Section -->
+<section id="second2" class="main special">
+<header class="major">
+<h2>Publications</h2>
+<div class= "list" style="list-style: none"; ul style="float:left;">
+<h3>Preprints</h3>
+<ul>
+<li> <strong>J. Levillain</strong>, J. Monnier. <i> Bathymetry estimations in river networks from altimetry measurements </i>, submitted, 2025 [<a href="https://hal.science/hal-05353262" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Preprint</a>].
+</li>
+</ul>
+<h3>Journal papers</h3>
+<ul>
+<li> F. Alouges, A. Lefebvre-Lepot, <strong>J. Levillain</strong>, C. Moreau. <i> The N-link model for slender rods in a viscous fluid: well-posedness and convergence to classical elastohydrodynamics equations </i>, Nonlinearity, 2025 [<a href="https://hal.science/hal-04944051" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Preprint</a>][<a href="https://iopscience.iop.org/article/10.1088/1361-6544/ae277d" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">DOI</a>].
+</li>
+</li>
+<li> F. Alouges, I. Anello, A. DeSimone, A. Lefebvre-Lepot, <strong>J. Levillain</strong>. <i> Some mathematical models for flagellar activation mechanisms, M3AS </i>, 2025 [<a href="https://arxiv.org/abs/2409.03506" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Preprint</a>][<a href="https://www.worldscientific.com/doi/10.1142/S0218202525500423" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">DOI</a>].
+</li>
+<li>F. Alouges, A. Lefebvre-Lepot, <strong>J. Levillain</strong>. <i> A limiting model for a low Reynolds number swimmer with N passive elastic arms </i>, AIMS MinE, 2023.
+[<a href="https://www.aimspress.com/article/10.3934/mine.2023087" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>]</li>
+</ul>
+<h3>Conference papers</h3>
+<ul>
+<li> R. Thoreau, <strong>J. Levillain</strong>, D. Derksen. <i>Can Multimodal Representation Learning by Alignment preserve modality-specific information?</i>, In: Koprinska, I., Mendes-Moreira, J., Branco, P. (eds) Machine Learning and Principles and Practice of Knowledge Discovery in Databases. ECML PKDD 2025. Communications in Computer and Information Science, vol 2843. Springer, Cham., 2026. [<a href="https://doi.org/10.1007/978-3-032-19108-3_16" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">DOI</a>][<a href="https://arxiv.org/abs/2509.17943v1" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Preprint</a>]. </li>
+<li> <strong>J. Levillain</strong>, F. Alouges, A. DeSimone, A. Choudhary, S. Nambiar, I. Bochert. <i> A bi-directional low-Reynolds-number swimmer with passive elastic arms </i>, ESAIM: Proceedings and Surveys, 2025 [<a href="https://www.esaim-proc.org/articles/proc/abs/2025/02/proc25079005/proc25079005.html" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>].
+</li>
+</ul>
+<h3>PhD</h3>
+<ul>
+My PhD thesis, entitled <i>Filament models for swimming at the microscopic scale</i>, is available <a href="https://theses.hal.science/tel-04766775"> here</a>. I was supervised by <a href="http://www.cmap.polytechnique.fr/~alouges/"> François Alouges </a> and <a href="https://lefebvre-lepot.perso.math.cnrs.fr/"> Aline Lefebvre-Lepot</a>.
+</ul>
+<h3>Report</h3>
+<ul>
+<li> <strong>J. Levillain</strong>. Hierarchical matrices and Adaptive Cross-Approximation, DENERG, Politecnico di Torino <i>(Report, pre-doctoral research year)</i>, 2020.
+[<a href="files/Rapport_ARPE__lemmas_in_appendix.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>]</li>
+</ul>
+</div>
+</section>
 
-  <section id="publications">
-    <h2>Publications</h2>
+<!-- Second Section
 
-    <h3>Preprints</h3>
-    <ul class="pub-list">
-      <li><strong>J. Levillain</strong>, J. Monnier. <em>Bathymetry estimations in river networks from altimetry measurements</em>, submitted, 2025 [<a href="https://hal.science/hal-05353262">preprint</a>].</li>
-    </ul>
+<section id="second" class="main special">
+<header class="major">
+<h2>Research</h2>
+</section>-->
 
-    <h3>Journal papers</h3>
-    <ul class="pub-list">
-      <li>F. Alouges, A. Lefebvre-Lepot, <strong>J. Levillain</strong>, C. Moreau. <em>The N-link model for slender rods in a viscous fluid: well-posedness and convergence to classical elastohydrodynamics equations</em>, Nonlinearity, 2025 [<a href="https://hal.science/hal-04944051">preprint</a>][<a href="https://iopscience.iop.org/article/10.1088/1361-6544/ae277d">DOI</a>].</li>
-      <li>F. Alouges, I. Anello, A. DeSimone, A. Lefebvre-Lepot, <strong>J. Levillain</strong>. <em>Some mathematical models for flagellar activation mechanisms</em>, M3AS, 2025 [<a href="https://arxiv.org/abs/2409.03506">preprint</a>][<a href="https://www.worldscientific.com/doi/10.1142/S0218202525500423">DOI</a>].</li>
-      <li>F. Alouges, A. Lefebvre-Lepot, <strong>J. Levillain</strong>. <em>A limiting model for a low Reynolds number swimmer with N passive elastic arms</em>, AIMS MinE, 2023 [<a href="https://www.aimspress.com/article/10.3934/mine.2023087">PDF</a>].</li>
-    </ul>
+<!-- Second Section -->
+<section id="second3" class="main special">
+<header class="major">
+<h2>Communications</h2>
+<div class= "list" style="list-style: none"; ul style="float:left;">
+<h3>Upcoming</h3>
+<ul>
+<li>10/12-16/2026: PDEs under pressure and applications in life science, Institut de Mathématiques de Toulouse, Toulouse, France.</li>
+<li>11/24-26/2026: Journées des Jeunes EDPistes en France, Institut de Mathématiques de Bordeaux, Bordeaux, France.</li>
+</ul>
+<h3>2026</h3>
+<ul>
+<li>06/22-26/2026: XVIIème Colloque Franco-Roumain de Mathématiques Appliquées, Nancy, France.</li>
+<li>06/01-06/2026: CANUM 2026, Saint-Jacut-de-la-Mer, France.</li>
+<li> 03/19/2026: Séminaire Analyse numérique et Modélisation, IRMAR, Rennes, France. </li>
+<li> 03/2-4/2026: CJC-MA 2026, Ecole Nationale des Ponts et Chaussées, Champs sur Marne, France. </li>
+<li> 02/26/2026: LMAH seminar, LMAH, Université Le Havre Normandie, Le Havre, France. </li>
+<li> 02/06/2026: PDE seminar, IECL, Université de Lorraine, Metz, France. </li>
+<li> 01/29/2026: Rencontre jeunes chercheurs X-Recherche, Maison des X, Paris, France. </li>
+<li> 01/22/2026: EDPAN seminar, LMBP, Université Clermont Auvergne, Clermont-Ferrand, France. </li>
+<li> 01/13/2026: Applied analysis team seminar, I2M, Université Aix-Marseille, Marseille, France. </li>
+</ul>
+<h3>2025</h3>
+<ul>
+<li> 11/24/2025: PDE Seminar, Department of Mathematics, Purdue University, Lafayette IN, USA. </li>
+<li> 11/21/2025: Applied and Computational Math seminar, Department of Mathematics, University of Wisconsin, Madison, WI, USA. </li>
+<li> 11/17-20/2025: SIAM conference on analysis of partial differential equations (PD25), Pittsburgh, PA, USA. </li>
+<li> 11/06/2025: Journées Math Bio Santé (JMBS) 2025, poster presentation, Université Montpellier 2, Montpellier, France. </li>
+<li> 10/23/2025: ReV Team seminar, LS2N, Centrale Nantes, Nantes, France. </li>
+<li> 10/21/2025: MACS Team seminar, LMJL, Université de Nantes, Nantes, France. </li>
+<li> 10/15/2025: Journées Jeunes Chercheurs CNES, poster presentation, Cité de l'Espace, Toulouse, France. </li>
+<li> 06/16/2025: SuPerGRandMa seminar, Université Paris-Saclay, Orsay, France. </li>
+<li> 06/05/2025: SMAI 2025, Carcans, France. </li>
+<li> 05/27/2025: 7e édition du Symposium MADICs, poster presentatio, Université Toulouse Capitole, Toulouse, France. </li>
+<li> 03/12/2025: Séminaire Analyse, Phénomènes Stochastiques et Applications, LMBA, Université de Bretagne Occidentale, Brest, France. </li>
+</ul>
+<h3>2024</h3>
+<ul>
+<li> 10/22/2024: Workshop "Bio- and bio-inspired locomotion of elongated bodies across scales and fields", LS2N, Ecole Centrale Nantes, Nantes, France. </li>
+<li> 09/11/2024: Conférence des 50 ans du CMAP, poster presentation, École polytechnique, Palaiseau, France. </li>
+<li> 05/30/2024: CANUM 2024, mini-symposium organizer and talk on low-Reynolds-number swimming, Le Bois-Plage-en-Ré, Île de Ré, France. </li>
+<li> 04/15/2024: Séminaire de l'équipe CALISTO, INRIA Université Côte D'Azur, Sophia Antipolis, France.</li>
+<li> 03/20/2024: Séminaire des doctorants du LAMFA, LAMFA, Amiens, France.</li>
+<li> 01/17/2024: Journée Maths en herbe (seminar for undergraduates), FMJH, talk <i>Introduction to micro-swimming</i>. IHES, Bures-sur-Yvette, France.</li>
+</ul>
+<h3>2023</h3>
+<ul>
+<li> 09/25/2023: Le Congrès des Jeunes Chercheurs en Mathématiques et Applications 2023, talk <i>Bi-directional low-Reynolds-number swimmer models</i>. CentraleSupéléc, Gif-sur-Yvette, France.</li>
+<li> 08/30/2023: Talk at [<a href="https://www.gfd-dennou.org/arch/zz2023/kurims-FD-workshop/" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer"> RIMS Fluid Dynamics Workshop </a>], Kyoto, Japan.</li>
+<li> 08/22/2023: ICIAM 2023, mini-symposium on "Low-Reynolds-number swimming: modelling, analysis and applications", Tokyo, Japan. Talk and co-organization of MS with C. Moreau.</li>
+<li> 07/05/2023: XX Jacques-Louis Lions Spanish-French School on Numerical Simulations in Physics & Engineering, poster presentation, Barcelona, Spain.</li>
+<li> 06/16/2023: AJS Seminars, SISSA, Trieste, Italy. [<a href="https://www.math.sissa.it/seminar/ajs-analysis-junior-seminars/limit-modeling-low-reynold-number-swimmer-n-passive-elastic" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Abstract</a>]</li>
+<li> 01/25/2023: Séminaire des doctorants du CMAP et du CMLS, École polytechnique, Palaiseau, France.
+</li>
+</ul>
+<h3>2022</h3>
+<ul>
+<li> 10/26/2022: RIMS Fluid Dynamics Group seminar, Kyoto University, Japan.
+</li>
+<li> 10/18/2022: Microscale Ocean Biophysics online seminar.
+<li> 09/21-23/2022: Le Congrès des Jeunes Chercheurs en Mathématiques et Applications 2022, Calais, France. <i>A mathematical model of flagellar activation mechanisms</i>.
+</li>
+<li> 06/13-17/2022: CANUM 2020+2, <i>Flagellar Locomotion of Micro-organisms</i>, invited by L. Giraldi and P. Lissy <i>(Mini-symposium)</i>.
+[<a href="https://canum2020.math.cnrs.fr/programme/soumission/04709597-cdc9-4438-95f0-bf8d783cf392/presentation.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>]</li>
+</ul>
+</section>
 
-    <h3>Conference papers</h3>
-    <ul class="pub-list">
-      <li>R. Thoreau, <strong>J. Levillain</strong>, D. Derksen. <em>Can Multimodal Representation Learning by Alignment preserve modality-specific information?</em> ECML PKDD 2025, Communications in Computer and Information Science, vol 2843. Springer, 2026 [<a href="https://doi.org/10.1007/978-3-032-19108-3_16">DOI</a>][<a href="https://arxiv.org/abs/2509.17943v1">preprint</a>].</li>
-      <li><strong>J. Levillain</strong>, F. Alouges, A. DeSimone, A. Choudhary, S. Nambiar, I. Bochert. <em>A bi-directional low-Reynolds-number swimmer with passive elastic arms</em>, ESAIM: Proceedings and Surveys, 2025 [<a href="https://www.esaim-proc.org/articles/proc/abs/2025/02/proc25079005/proc25079005.html">PDF</a>].</li>
-    </ul>
+<!-- Upcoming/latest invitations -->
+<section id="invitations" class="main special">
+<header class="major">
+<h2>Upcoming/latest invitations</h2>
+</header>
+<div class="content">
+<p>
+<!--
+	TO COMPLETE: this paragraph is for longer invited research
+	stays/visits (as opposed to individual talks, which are listed
+	under Communications above) -- e.g. an invitation to visit a
+	lab or department for a few days/weeks. Follow the format below,
+	one line per stay, most recent/soonest first, as on
+	matteodachille.github.io:
 
-    <h3>PhD thesis</h3>
-    <p>
-      <em>Filament models for swimming at the microscopic scale</em>, available <a href="https://theses.hal.science/tel-04766775">here</a>. Supervised by <a href="http://www.cmap.polytechnique.fr/~alouges/">François Alouges</a> and <a href="https://lefebvre-lepot.perso.math.cnrs.fr/">Aline Lefebvre-Lepot</a>.
-    </p>
+	‣ DD.MM to DD.MM ‣ Host institution, City, Country
+-->
 
-    <h3>Report</h3>
-    <ul class="pub-list">
-      <li><strong>J. Levillain</strong>. Hierarchical matrices and Adaptive Cross-Approximation, DENERG, Politecnico di Torino <em>(pre-doctoral research year)</em>, 2020 [<a href="files/Rapport_ARPE__lemmas_in_appendix.pdf">PDF</a>].</li>
-    </ul>
-  </section>
+</p>
+<p>
+‣ 09/15-16/2026: IECL, Université de Lorraine, Metz, France.
+‣ 04/30/2026: IECL, Université de Lorraine, Metz, France.
+‣ 03/18-19/2026: IRMAR, Université de Rennes, Rennes, France.
+‣ 11/24-25/2025: Mathematics Department, Purdue University, Purdue (IN), USA.
+‣ 11/20-22/2025: Mathematics Department, University of Wisconsin - Madison, Madison (WI), USA.
+  
+</p>
+</div>
+</section>
 
-  <section id="communications">
-    <h2>Communications</h2>
+<section id="third" class="main special">
+<header class="major">
+<h2>Game</h2>
+<ul class="box alt">
+<span class="logo"><img src="images/Capture d’écran 2026-04-12 à 12.20.27.png" alt="" width="200"/></span>
+<h3> Try out <a href="https://suchiz.itch.io/pulse-panic">Pulse Panic</a>, a game we coded during the Toulouse scientific game Jam (2026 edition): Create and guide your nanobot to attack Mrs. Thrombosis and save your patient from a stroke!
+</h3>
+</ul>
+</section>
 
-    <h3>Upcoming</h3>
-    <ul class="plain">
-      <li>10/12&ndash;16/2026: PDEs under pressure and applications in life science, Institut de Mathématiques de Toulouse, Toulouse, France.</li>
-      <li>11/24&ndash;26/2026: Journées des Jeunes EDPistes en France, Institut de Mathématiques de Bordeaux, Bordeaux, France.</li>
-    </ul>
-
-    <h3>2026</h3>
-    <ul class="plain">
-      <li>06/22&ndash;26/2026: XVIIème Colloque Franco-Roumain de Mathématiques Appliquées, Nancy, France.</li>
-      <li>06/01&ndash;06/2026: CANUM 2026, Saint-Jacut-de-la-Mer, France.</li>
-      <li>03/19/2026: Séminaire Analyse numérique et Modélisation, IRMAR, Rennes, France.</li>
-      <li>03/2&ndash;4/2026: CJC-MA 2026, Ecole Nationale des Ponts et Chaussées, Champs sur Marne, France.</li>
-      <li>02/26/2026: LMAH seminar, LMAH, Université Le Havre Normandie, Le Havre, France.</li>
-      <li>02/06/2026: PDE seminar, IECL, Université de Lorraine, Metz, France.</li>
-      <li>01/29/2026: Rencontre jeunes chercheurs X-Recherche, Maison des X, Paris, France.</li>
-      <li>01/22/2026: EDPAN seminar, LMBP, Université Clermont Auvergne, Clermont-Ferrand, France.</li>
-      <li>01/13/2026: Applied analysis team seminar, I2M, Université Aix-Marseille, Marseille, France.</li>
-    </ul>
-
-    <details>
-      <summary>2025</summary>
-      <ul class="plain">
-        <li>11/24/2025: PDE Seminar, Department of Mathematics, Purdue University, Lafayette IN, USA.</li>
-        <li>11/21/2025: Applied and Computational Math seminar, Department of Mathematics, University of Wisconsin, Madison, WI, USA.</li>
-        <li>11/17&ndash;20/2025: SIAM conference on analysis of partial differential equations (PD25), Pittsburgh, PA, USA.</li>
-        <li>11/06/2025: Journées Math Bio Santé (JMBS) 2025, poster presentation, Université Montpellier 2, Montpellier, France.</li>
-        <li>10/23/2025: ReV Team seminar, LS2N, Centrale Nantes, Nantes, France.</li>
-        <li>10/21/2025: MACS Team seminar, LMJL, Université de Nantes, Nantes, France.</li>
-        <li>10/15/2025: Journées Jeunes Chercheurs CNES, poster presentation, Cité de l'Espace, Toulouse, France.</li>
-        <li>06/16/2025: SuPerGRandMa seminar, Université Paris-Saclay, Orsay, France.</li>
-        <li>06/05/2025: SMAI 2025, Carcans, France.</li>
-        <li>05/27/2025: 7e édition du Symposium MADICs, poster presentation, Université Toulouse Capitole, Toulouse, France.</li>
-        <li>03/12/2025: Séminaire Analyse, Phénomènes Stochastiques et Applications, LMBA, Université de Bretagne Occidentale, Brest, France.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>2024</summary>
-      <ul class="plain">
-        <li>10/22/2024: Workshop "Bio- and bio-inspired locomotion of elongated bodies across scales and fields", LS2N, Ecole Centrale Nantes, Nantes, France.</li>
-        <li>09/11/2024: Conférence des 50 ans du CMAP, poster presentation, École polytechnique, Palaiseau, France.</li>
-        <li>05/30/2024: CANUM 2024, mini-symposium organizer and talk on low-Reynolds-number swimming, Le Bois-Plage-en-Ré, Île de Ré, France.</li>
-        <li>04/15/2024: Séminaire de l'équipe CALISTO, INRIA Université Côte D'Azur, Sophia Antipolis, France.</li>
-        <li>03/20/2024: Séminaire des doctorants du LAMFA, LAMFA, Amiens, France.</li>
-        <li>01/17/2024: Journée Maths en herbe (seminar for undergraduates), FMJH, talk <em>Introduction to micro-swimming</em>. IHES, Bures-sur-Yvette, France.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>2023</summary>
-      <ul class="plain">
-        <li>09/25/2023: Le Congrès des Jeunes Chercheurs en Mathématiques et Applications 2023, talk <em>Bi-directional low-Reynolds-number swimmer models</em>. CentraleSupéléc, Gif-sur-Yvette, France.</li>
-        <li>08/30/2023: Talk at <a href="https://www.gfd-dennou.org/arch/zz2023/kurims-FD-workshop/">RIMS Fluid Dynamics Workshop</a>, Kyoto, Japan.</li>
-        <li>08/22/2023: ICIAM 2023, mini-symposium on "Low-Reynolds-number swimming: modelling, analysis and applications", Tokyo, Japan. Talk and co-organization of MS with C. Moreau.</li>
-        <li>07/05/2023: XX Jacques-Louis Lions Spanish-French School on Numerical Simulations in Physics &amp; Engineering, poster presentation, Barcelona, Spain.</li>
-        <li>06/16/2023: AJS Seminars, SISSA, Trieste, Italy [<a href="https://www.math.sissa.it/seminar/ajs-analysis-junior-seminars/limit-modeling-low-reynold-number-swimmer-n-passive-elastic">abstract</a>].</li>
-        <li>01/25/2023: Séminaire des doctorants du CMAP et du CMLS, École polytechnique, Palaiseau, France.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary>2022</summary>
-      <ul class="plain">
-        <li>10/26/2022: RIMS Fluid Dynamics Group seminar, Kyoto University, Japan.</li>
-        <li>10/18/2022: Microscale Ocean Biophysics online seminar.</li>
-        <li>09/21&ndash;23/2022: Le Congrès des Jeunes Chercheurs en Mathématiques et Applications 2022, Calais, France. <em>A mathematical model of flagellar activation mechanisms</em>.</li>
-        <li>06/13&ndash;17/2022: CANUM 2020+2, <em>Flagellar Locomotion of Micro-organisms</em>, invited by L. Giraldi and P. Lissy (mini-symposium) [<a href="https://canum2020.math.cnrs.fr/programme/soumission/04709597-cdc9-4438-95f0-bf8d783cf392/presentation.pdf">PDF</a>].</li>
-      </ul>
-    </details>
-  </section>
-
-  <section id="teaching">
-    <h2>Teaching</h2>
-
-    <h3>2021&ndash;2024: École polytechnique</h3>
-    <ul class="plain">
-      <li>MAP350: Preparatory mathematics course, 1st year of Ingénieur Polytechnicien Program.</li>
-      <li>Numerical Analysis 2: Linear Algebra and Optimization (MAA251, Bachelor of Science, 2nd year).</li>
-      <li>Computational mathematics (MAA106, Bachelor of Science, 1st year).</li>
-    </ul>
-
-    <h3>Previous teaching experience</h3>
-    <ul class="plain">
-      <li><strong>2020&ndash;2021</strong> &mdash; Tutoring in Mathematics for Bachelor of Science students at <a href="https://www.villebon-charpak.fr/">Institut Villebon-Charpak, Université Paris-Saclay</a>.</li>
-      <li><strong>2018&ndash;2019</strong> &mdash; Guest teacher in mathematics for high-schoolers at <a href="https://www.insep.fr/en">INSEP</a>.</li>
-    </ul>
-  </section>
-
-  <section id="supervision">
-    <h2>Supervision</h2>
-
-    <h3>M2 research internships</h3>
-
-    <div class="sup-item">
-      <p class="sup-head">A. Schlater, 2026 <span class="sup-cosup">&mdash; co-supervision with M. D&rsquo;Achille and P. Moyal</span></p>
-      <p class="sup-title"><em>TBA</em></p>
-      <p class="sup-title">M2 Master’s programme for Mathematics, Friedrich Schiller University Jena, Germany</p>
-      <p class="sup-meta">IECL, Université de Lorraine, Metz, France (04/2026 - current). </p>
-      <p class="sup-meta">Stage supported by a grant from CNES.</p>
-    </div>
-
-    <div class="sup-item">
-      <p class="sup-head">T. Quarck, 2025 <span class="sup-cosup">&mdash; co-supervision with M. D&rsquo;Achille</span></p>
-      <p class="sup-title"><em>Random assignment problems for satellite data acquisition</em></p>
-      <p class="sup-title">M2 Mathématiques et Applications, Probabilités et Modèles Aléatoires, Sorbonne Université</p>
-      <p class="sup-meta">LMO, Université Paris-Saclay, Orsay, France (04/2025 - 10/2025).</p>
-      <p class="sup-meta">Stage supported by a grant from CNES.</p>
-    </div>
-
-    <h3>L3 bachelor theses</h3>
-
-    <div class="sup-item">
-      <p class="sup-head">A. Failler, 2023</p>
-      <p class="sup-title"><em>On the Perron&ndash;Frobenius theorem: discovering Google's PageRank algorithm</em></p>
-      <p class="sup-meta">CMAP, École polytechnique, Palaiseau, France. 2 months.</p>
-    </div>
-
-    <div class="sup-item">
-      <p class="sup-head">D. Dac, 2022</p>
-      <p class="sup-title"><em>Introduction to image denoising: on BM3D</em></p>
-      <p class="sup-meta">CMAP, École polytechnique, Palaiseau, France. 2 months.</p>
-    </div>
-  </section>
-
-  <section id="game">
-    <h2>Game</h2>
-    <div class="game-card">
-      <img class="game-shot" src="images/Capture d’écran 2026-04-12 à 12.20.27.png" alt="Pulse Panic game screenshot" />
-      <p>
-        Try out <strong>Pulse Panic</strong>, a game coded during the Toulouse scientific game jam (2026 edition): create and guide your nanobot to attack Mrs. Thrombosis and save your patient from a stroke!
-      </p>
-      <a class="play-link" href="https://suchiz.itch.io/pulse-panic">Play Pulse Panic &rarr;</a>
-    </div>
-  </section>
-
-  <footer id="footer">
-    <h2>Contact</h2>
-    <div class="addr">
-      DTN/CD/TPA, Centre National d'Etudes Spatiales (CNES)<br />
-      18 avenue Edouard Belin, 31400 Toulouse, France
-    </div>
-    <div class="addr">
-      <a href="#" onclick="location.href='mailto:'+'jessie.levillain[@]ens-paris-saclay.fr'; return false;">jessie.levillain [at] ens-paris-saclay [dot] fr</a><br />
-      <a href="#" onclick="location.href='mailto:'+'jessie.levillain[@]cnes.fr'; return false;">jessie.levillain [at] cnes [dot] fr</a>
-    </div>
-    <div class="socials">
-      <a href="https://github.com/jesnial">GitHub</a>
-      <a href="https://www.linkedin.com/in/jessie-l-2b0501196/">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=idJ4GtcAAAAJ&hl=fr">Google Scholar</a>
-      <a href="https://www.researchgate.net/profile/Jessie-Levillain/research">ResearchGate</a>
-    </div>
-    <div class="meta">
-      &copy; 2022&ndash;<span id="year"></span> Jessie Levillain &middot; Last updated <span id="updated"></span>
-      &middot; <a href="https://hits.sh/jesnial.github.io/"><img class="hits-badge" alt="views today/total" src="https://hits.sh/jesnial.github.io.svg?view=today-total&style=flat-square&label=views&color=0e5c68&labelColor=1f2724" /></a>
-    </div>
-  </footer>
+<!--
+<!-- Third Section -->
 
 </div>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('updated').textContent = new Date(document.lastModified)
-    .toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-</script>
+<!-- Footer -->
+<footer id="footer">
+<section>
+<h2>Jessie Levillain</h2>
+<dl class="alt">
+<dt>Address</dt>
+<dd>
+DTN/CD/TPA, Centre National d'Etudes Spatiales (CNES),
+18 avenue Edouard Belin, 31400 Toulouse </dd>
+<dt>Email</dt>
+<dd><a href="mailto: jessie.levillain[at]ens-paris-saclay[dot]fr">jessie.levillain[at]ens-paris-saclay[dot]fr or jessie.levillain[at]cnes[dot]fr</a></dd>
+</dl>
+<ul class="icons">
+<li><a href="https://github.com/jesnial" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+<li><a href="https://www.linkedin.com/in/jessie-l-2b0501196/" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
+</ul>
+</section>
+<p class="copyright">&copy; 2022 Jessie Levillain, all rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+</footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
 </body>
 </html>
