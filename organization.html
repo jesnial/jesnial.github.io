@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Organization · Jessie Levillain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Jessie Levillain" />
+<meta name="description" content="Organizational and service activities of Jessie Levillain." />
+<link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html#intro">Home</a>
+  <a href="index.html#research">Research</a>
+  <a href="index.html#publications">Publications</a>
+  <a href="index.html#communications">Communications</a>
+  <a href="organization.html" aria-current="page">Organization</a>
+  <a href="supervision.html">Supervision</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="index.html#game">Game</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="site-head">
+    <h1>Jessie Levillain</h1>
+    <p class="role">Postdoctoral fellow, CNES &middot; Applied Mathematics</p>
+  </header>
+
+  <section id="organization">
+    <h2>Organization</h2>
+
+    <h3>Organized conference sessions / mini-symposia</h3>
+
+    <div class="org-item">
+      <p class="org-head">CANUM 2024 <span class="org-dates">&mdash; 30 May 2024</span></p>
+      <p class="org-desc">Mini-symposium organizer and speaker, on low-Reynolds-number swimming.</p>
+      <p class="org-meta">Le Bois-Plage-en-Ré, Île de Ré, France.</p>
+    </div>
+
+    <div class="org-item">
+      <p class="org-head">ICIAM 2023 <span class="org-dates">&mdash; 22 August 2023</span></p>
+      <p class="org-desc">Mini-symposium on &ldquo;Low-Reynolds-number swimming: modelling, analysis and applications&rdquo;, co-organized with C. Moreau.</p>
+      <p class="org-meta">Tokyo, Japan.</p>
+    </div>
+
+    <h3>Other organizational activities</h3>
+    <!--
+      TO COMPLETE FROM YOUR CV: add any further organizational/service
+      activities here -- seminar or working-group organization,
+      committee membership, reviewing, outreach event organization
+      (e.g. the Toulouse scientific game jam mentioned in the Game
+      section on the homepage), summer school organization, etc.
+      Suggested format, one .org-item block per activity:
+
+      <div class="org-item">
+        <p class="org-head">Name of the activity <span class="org-dates">&mdash; start date to end date (or "present")</span></p>
+        <p class="org-desc">Short description of the activity.</p>
+        <p class="org-meta">Institution / venue.</p>
+      </div>
+    -->
+    <p><em>Add entries here from your CV.</em></p>
+  </section>
+
+  <footer id="footer">
+    <h2>Contact</h2>
+    <div class="addr">
+      DTN/CD/TPA, Centre National d'Etudes Spatiales (CNES)<br />
+      18 avenue Edouard Belin, 31400 Toulouse, France
+    </div>
+    <div class="addr">
+      <a href="#" onclick="location.href='mailto:'+'jessie.levillain[@]ens-paris-saclay.fr'; return false;">jessie.levillain [at] ens-paris-saclay [dot] fr</a><br />
+      <a href="#" onclick="location.href='mailto:'+'jessie.levillain[@]cnes.fr'; return false;">jessie.levillain [at] cnes [dot] fr</a>
+    </div>
+    <div class="socials">
+      <a href="https://github.com/jesnial">GitHub</a>
+      <a href="https://www.linkedin.com/in/jessie-l-2b0501196/">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=idJ4GtcAAAAJ&hl=fr">Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/Jessie-Levillain/research">ResearchGate</a>
+    </div>
+    <div class="meta">
+      &copy; 2022&ndash;<span id="year"></span> Jessie Levillain &middot; Last updated <span id="updated"></span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('updated').textContent = new Date(document.lastModified)
+    .toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+</script>
+</body>
+</html>
